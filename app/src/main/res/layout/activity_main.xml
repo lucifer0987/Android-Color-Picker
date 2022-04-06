@@ -91,4 +91,12 @@
         android:scaleType="centerCrop"
         android:src="@drawable/color_wheel"/>
 
+    <SeekBar
+        android:id="@+id/sb_brightness"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:indeterminateTint="@color/orange"
+        android:layout_margin="12dp"
+        android:progressBackgroundTint="#FFFFFF"/>
+
 </LinearLayout>

@@ -11,6 +11,9 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.colorwheelpicker.databinding.ActivityMainBinding
+import android.view.WindowManager
+import android.widget.SeekBar
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -76,6 +79,21 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
+
+        binding.sbBrightness.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seek: SeekBar, progress: Int, fromUser: Boolean) {
+                val backLightValue = (progress.toFloat()) / 100
+                val layoutParams = window.attributes // Get Params
+                layoutParams.screenBrightness = backLightValue // Set Value
+                window.attributes = layoutParams
+            }
+
+            override fun onStartTrackingTouch(seek: SeekBar) {
+            }
+
+            override fun onStopTrackingTouch(seek: SeekBar) {
+            }
+        })
 
     }
 
